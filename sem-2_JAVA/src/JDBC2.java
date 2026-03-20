@@ -1,0 +1,60 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JDBC2
+{
+    public static void main(String[] args) throws ClassNotFoundException, SQLException
+    {
+        Scanner sc = new Scanner(System.in);
+        // Step:1 - Loading and Registering Driver
+        String D_name = "com.mysql.cj.jdbc.Driver";
+        Class.forName(D_name);
+        System.out.println("Driver Registered successfully");
+
+        // Step:2 - Creating Connection
+        String DbUrl = "jdbc:mysql://localhost/d5";
+        String DbUser = "root";
+        String DbPassword = "";
+        Connection con = DriverManager.getConnection(DbUrl,DbUser,DbPassword);
+
+        if(con!=null)
+        {
+            System.out.println("Connection Established");
+        }
+        else
+        {
+            System.out.println("connection is not Established");
+        }
+
+        // Step:3 - Create Statement Object
+        assert con != null;
+        Statement st = con.createStatement();
+
+        // Step:4 - Write SQL Query
+        System.out.println("Insert the number of people you want to add");
+        int n = sc.nextInt();
+        int I = 0;
+        for(int i = 1; i<=n ; i++)
+        {
+            System.out.println("Enter for "+i+" Person");
+            System.out.println("Enter ROll Number");
+            int ROllNO = sc.nextInt();
+            System.out.println("Enter Name");
+            String Name = sc.next();
+            System.out.println("Enter Marks");
+            double Marks = sc.nextDouble();
+            System.out.println("Enter Age ");
+            int Age = sc.nextInt();
+            String SQL = "INSERT INTO student VALUES(" + ROllNO + ",'" + Name + "'," + Marks + "," + Age + ",'LJIET');";
+            I = st.executeUpdate(SQL);
+        }
+        // Step:5 - Execution of Query
+        System.out.println(I+" Lines are Inserted");
+            // Step:6 - Close The Connection
+            con.close();
+
+    }
+}
