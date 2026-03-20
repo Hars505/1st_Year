@@ -1,0 +1,50 @@
+*  semantic tags  ---  Describe their meanings 
+
+1> <header>
+2> <footer>
+3> <article>
+4> <section>
+5> <aside>
+6> <nav>
+7> <main>
+
+
+* Non semantic tags   ---  Not describe their meanings
+
+1> <div>
+2> <span>
+
+
+Block Elements - <header>,<footer> that happen in whole page
+
+
+Inline Elements - <p>, etc... that happens in a single line
+
+* Meta tag <meta>
+
+1) charset  <meta charset="UTH-8">
+2) viewport  <meta name="viewpoint" content="width=device-width" , initial - scale = "1.0">
+3) Description  <meta name="description" content=" ANY THING ABOUT RELATED TO WEBPAGE">
+4) keyword  <meta name="keywords" content="food, Indian">
+5) author  <meta name="author" content="ABC">
+6) httpequiv <meta httpequiv="Refresh" content="10, URL="http://indication.com">
+
+                               
+                         ---------- EXAMPLE ---------
+
+<html>
+    <head>
+        <title> My First Webpage </title>
+        <h1>FIRST HTML WEBPAGE</h1>
+    </head>
+    <body bgcolor="cyan">
+        <h1>HELLO</h1>
+        <h2>HELLO</h2>
+        <h3>HELLO</h3>
+        <h4>HELLO</h4>
+        <h5>HELLO</h5>
+        <h6>HELLO</h6>
+    </body>
+</html>
+
+
